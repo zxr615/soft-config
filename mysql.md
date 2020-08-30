@@ -55,3 +55,4 @@ dpkg --list|grep mysql
 # 清楚残留数据
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 ```
+

@@ -25,4 +25,15 @@
   x = 分钟，0 = 每次都要输入密码， -1 = 记住密码
   ```
 
+- 关闭防火墙
+
+  ```
+  # 状态
+  systemctl status ufw
+  # 关闭
+  systemctl stop ufw
+  # 禁止开机自启
+  systemctl disable ufw
+  ```
+
   

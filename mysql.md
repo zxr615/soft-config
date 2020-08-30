@@ -1,4 +1,4 @@
-## 基本
+## mysql5.7-ubuntu
 
 ### 安装
 
@@ -55,4 +55,3 @@ dpkg --list|grep mysql
 # 清楚残留数据
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 ```
-

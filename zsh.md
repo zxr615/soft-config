@@ -1,8 +1,10 @@
-## zsh
+# zsh
 
-- 安装
+## 安装
 
-  `apt install zsh`
+- zsh
+
+    `apt install zsh`
 
 - 安装oh-my-zsh
 
@@ -34,3 +36,19 @@
     zsh-syntax-highlighting
   )
   ```
+
+
+
+
+## root 用户
+
+> 将当前用户的 zsh 配置文件软链到 root 家目录中，这样两个用户可以使用同一个 zsh 配置
+
+```
+sudo ln -s $HOME/.oh-my-zsh /root/.oh-my-zsh
+sudo ln -s $HOME/.zshrc /root/.zshrc
+
+# 替换 zsh
+root > chsh -s 'which zsh'
+```
+

@@ -1,5 +1,7 @@
 ## ubuntu
 
+## 基本设置
+
 - 允许 root 登录
 
   ```shell
@@ -37,3 +39,16 @@
   ```
 
   
+
+## 常用软件
+
+- 上传工具 lrzsz
+
+    ```
+    sudo apt install lrzsz
+    
+    # 远程工具设置文件传输为：ZModem
+    命令：rz
+    ```
+
+    

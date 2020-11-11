@@ -33,6 +33,13 @@ sudo apt install smbclient
    pam password change = yes
    map to guest = bad user
    usershare allow guests = yes
+   # 创建文件用户
+   force user = fanwei
+   # 创建文件组
+   force group = fanwei
+   create mask = 0777
+   directory mask = 0777
+
 
 [project]
     comment = Project

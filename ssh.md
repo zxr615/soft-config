@@ -4,24 +4,33 @@
 
 `ssh-keygen -t rsa -C "12345@qq.com"`
 
-
-
 ## 免密远程 SSH 登录
 
-将本地 `id_rsa.pub` 添加到服务端 `authorized_keys`中
+1：将本地 `id_rsa.pub` 添加到本地的 `authorized_keys` 中  
+2：将本地 `id_rsa.pub` 添加到服务端 `authorized_keys` 中  
+3: 服务端配置允许公钥方式登录  
+```shell
+vim /etc/ssh/sshd_config
+
+# 公钥登录
+PubkeyAuthentication yes
+# 公钥文件
+AuthorizedKeysFile .ssh/authorized_keys
+# 密码登录
+PasswordAuthentication yes
+```
+4：重启 ssh `sudo service ssh restart`
 
 ```
 # 客户端
 `cat ~/.ssh/id_rsa.pub`
 
-# 服务端将客户端的「id_rsa.pub」追加进 「authorized_keys」中
+# 客户端中的「id_rsa.pub」内容追加进服务端的 「authorized_keys」中
 sudo vim ~/.ssh/authorized_keys
 
 # 免密登录
 SSH fanwei@192.168.0.1
 ```
-
-
 
 ## 区分多个服务器
 
@@ -52,4 +61,7 @@ Host ubuntu2
 `Settings -> Tools -> Terminal`
 
 ![image-20200830204459428](https://cdn.jsdelivr.net/gh/zxr615/md-images/images/2020/image-20200830204459428.png)
+
+## ref
+https://www.howtoing.com/how-to-set-up-ssh-keys-on-ubuntu-1804
 
